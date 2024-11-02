@@ -21,6 +21,10 @@ const initialFriends = [
   },
 ];
 
+function Button({ children }) {
+  return <button className="button">{children}</button>
+}
+
 export default function App() {
   const [showAddFriend, setShowAddFriend] = useState(false);
 
@@ -28,7 +32,7 @@ export default function App() {
   <div className="app">
     <div className="sidebar">
       <FriendsList />
-      <FormAddFriend />
+      {showAddFriend && <FormAddFriend />}
       <Button>Add friend</Button>
     </div>
 
@@ -78,9 +82,6 @@ function Friend({friend}) {
   );
 }
 
-function Button({ children }) {
-  return <button className="button">{children}</button>
-}
 
 function FormAddFriend() {
   return (
