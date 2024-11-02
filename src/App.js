@@ -69,3 +69,7 @@ function Friend({friend}) {
   </li>
   );
 }
+
+function FormAddFriend() {
+  return <form className="form-add-friend"></form>
+}
