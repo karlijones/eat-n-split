@@ -32,14 +32,16 @@ export default function App() {
 function FriendsList() {
   const friends = initialFriends;
 
-  return <ul>
-    {friends.map(friend => (
-      <Friend friend={friend} key={friend.id} />
-    ))}
-  </ul>
+  return (
+    <ul>
+      {friends.map((friend)=> (
+        <Friend friend={friend} key={friend.id} />
+      ))}
+    </ul>
+  );
 }
 
 //function to put each friend into their own component
-function Friend(friend) {
+function Friend({friend}) {
   return <li>{friend.name}</li>
 }
