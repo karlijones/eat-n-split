@@ -109,7 +109,7 @@ function FormSplitBill() {
       <label>🤑 Who is paying the bill</label>
       <select>
         <option value="user">You</option>
-        <option> value="friendX</option>
+        <option value="friend"> X</option>
       </select>
 
       <Button>Split bill</Button>
