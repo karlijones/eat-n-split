@@ -20,11 +20,26 @@ const initialFriends = [
 ];
 
 export default function App() {
-  return <div>
-    <FriendsList />
+  return (
+  <div className="app">
+    <div className="sidebar">
+      <FriendsList />
+    </div>
   </div>
+  );
 }
 
 function FriendsList() {
-  return <li>List</li>
+  const friends = initialFriends;
+
+  return <ul>
+    {friends.map(friend => (
+      <Friend friend={friend} key={friend.id} />
+    ))}
+  </ul>
+}
+
+//function to put each friend into their own component
+function Friend(friend) {
+  return <li>{friend.name}</li>
 }
