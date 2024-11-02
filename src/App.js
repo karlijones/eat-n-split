@@ -64,6 +64,8 @@ function Friend({friend}) {
             <p>
               You and {friend.name} are even</p>
             )}
+
+      <button className="button">Select</button>
   </li>
   );
 }
