@@ -71,5 +71,10 @@ function Friend({friend}) {
 }
 
 function FormAddFriend() {
-  return <form className="form-add-friend"></form>
+  return (
+    <form className="form-add-friend">
+      <label>👫 Friend name</label>
+      <input type="text" />
+    </form>
+  ); 
 }
