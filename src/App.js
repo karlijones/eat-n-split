@@ -64,22 +64,28 @@ export default function App() {
   );
 }
 
-function FriendsList({ friends, onSelection }) {
+function FriendsList({ friends, onSelection, selectedFriend }) {
 
   return (
     <ul>
       {friends.map((friend)=> (
-        <Friend friend={friend} key={friend.id}
-        onSelection={onSelection} />
+        <Friend 
+          friend={friend} 
+          key={friend.id}
+          selectedFriend={selectedFriend}
+          onSelection={onSelection}
+        />
       ))}
     </ul>
   );
 }
 
 //function to put each friend into their own component
-function Friend({friend, onSelection }) {
+function Friend({friend, onSelection, selectedFriend }) {
+  const isSelected = selectedFriend.id === friend.id;
+  
   return (
-  <li>
+  <li className={isSelected ? "selected" : ""} >
       <img src={friend.image} alt={friend.name} />
       <h3>{friend.name}</h3>
 
@@ -100,7 +106,9 @@ function Friend({friend, onSelection }) {
               You and {friend.name} are even
             </p>}
 
-      <Button onClick={() => onSelection(friend)}>Select</Button>
+      <Button onClick={() => onSelection(friend)}>
+        {isSelected ? "Close" : "Select"}
+      </Button>
   </li>
   );
 }
