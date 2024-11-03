@@ -28,6 +28,7 @@ function Button({ children, onClick }) {
 export default function App() {
   const [friends, setFriends] = useState(initialFriends);
   const [showAddFriend, setShowAddFriend] = useState(false);
+  const [selectedFried, setSelectedFriend] = useState(null);
 
   function handleShowAddFriend() {
     setShowAddFriend((show) => !show);
@@ -36,6 +37,10 @@ export default function App() {
   function handleAddFriend(friend) {
     setFriends((friends) => [...friends, friend]);
     setShowAddFriend(false);
+  }
+
+  function handleSelection(friend) {
+    setSelectedFriend(friend);
   }
 
   return (
@@ -48,7 +53,7 @@ export default function App() {
         {showAddFriend ? "Close" : "Add friend"}</Button>
     </div>
 
-    <FormSplitBill />
+    {selectedFriend && <FormSplitBill />}
   </div>
   );
 }
