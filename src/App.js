@@ -46,7 +46,10 @@ export default function App() {
   return (
   <div className="app">
     <div className="sidebar">
-      <FriendsList friends={friends} onSelection={handleSelection}/>
+      <FriendsList 
+      friends={friends} 
+      selectedFriend={selectedFriend}
+      onSelection={handleSelection}/>
 
       {showAddFriend && <FormAddFriend onAddFriend=
       {handleAddFriend} />}
